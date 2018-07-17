@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="mainLayout" template="/ui/jsp/layout/main.jsp">
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<definition name="roboworld" extends="mainLayout">
+		<put-attribute name="body" value="/ui/jsp/view/roboworld.jsp" />
+	</definition>
+
+</tiles-definitions>
