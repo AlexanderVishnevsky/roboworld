@@ -70,3 +70,10 @@
 
     </tr>
 </table>
+
+<div style="height: 200px; overflow: auto">
+    <c:forEach items="${logList}" var="log">
+        <br/>
+        ${log}
+    </c:forEach>
+</div>
