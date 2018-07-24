@@ -50,21 +50,21 @@ public class GameController {
         return "redirect:/roboworld";
     }
 
-    // Add Attack action to the robot
+    // Add Speak action to the robot
     @RequestMapping(value = "/addSpeak/{id}")
     public String addAttackActionToRobot(@PathVariable("id") Long id) {
         roboWorld.addTaskQueueToRobot(robotTaskDAO.getTask(1), id);
         return "redirect:/roboworld";
     }
 
-    // Add Build action to the robot
+    // Add Charge action to the robot
     @RequestMapping(value = "/addCharge/{id}")
     public String addBuildActionToRobot(@PathVariable("id") Long id) {
         roboWorld.addTaskQueueToRobot(robotTaskDAO.getTask(2), id);
         return "redirect:/roboworld";
     }
 
-    // Add Mine action to the robot
+    // Add Upgrade action to the robot
     @RequestMapping(value = "/addUpgrade/{id}")
     public String addMineActionToRobot(@PathVariable("id") Long id) {
         roboWorld.addTaskQueueToRobot(robotTaskDAO.getTask(3), id);
@@ -78,19 +78,21 @@ public class GameController {
         return "redirect:/roboworld";
     }
 
-
+    //tasks for all robots
     @RequestMapping(value = "/addSpeakTask")
     public String addAttackAction(Model model) {
         roboWorld.addTaskToAll(robotTaskDAO.getTask(1));
         return "redirect:/roboworld";
     }
 
+    //tasks for all robots
     @RequestMapping(value = "/addChargeTask")
     public String addBuildAction() {
         roboWorld.addTaskToAll(robotTaskDAO.getTask(2));
         return "redirect:/roboworld";
     }
 
+    //tasks for all robots
     @RequestMapping(value = "/addUpgradeTask")
     public String addMineAction() {
         roboWorld.addTaskToAll(robotTaskDAO.getTask(3));
