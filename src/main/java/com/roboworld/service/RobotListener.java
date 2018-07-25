@@ -28,6 +28,7 @@ public class RobotListener implements RobotListenerImpl {
             }
             case STOP: {
                 String text = robot.getRobotName();
+                log.add(text);
                 break;
             }
             case DESTROY: {

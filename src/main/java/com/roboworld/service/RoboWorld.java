@@ -16,9 +16,9 @@ import java.util.concurrent.BlockingQueue;
 @Service
 public class RoboWorld {
 
-    @Autowired
-    private RobotTaskDAO robotTaskDAO;
+    private final RobotTaskDAO robotTaskDAO;
 
+    //Working with Blocking queue
     private final int capacityOfRobotActionsQueue = 10;
     private static Map<Long, Robot> robotMap = new HashMap<>();
 
@@ -29,6 +29,11 @@ public class RoboWorld {
             Robot robot = new Robot();
             robotMap.put(robot.getId(), robot);
         }
+    }
+
+    @Autowired
+    public RoboWorld(RobotTaskDAO robotTaskDAO) {
+        this.robotTaskDAO = robotTaskDAO;
     }
 
     // Create new robot
