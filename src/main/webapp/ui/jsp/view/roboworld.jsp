@@ -77,6 +77,6 @@
 <script type="text/javascript">
     window.setTimeout(function () {
         $('#refresh').load('${contextPath}/begin')
-    }, 5000);
+    }, 2000);
 </script>
 

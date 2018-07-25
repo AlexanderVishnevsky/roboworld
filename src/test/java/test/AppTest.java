@@ -1,6 +1,7 @@
 package test;
 
 
+import com.roboworld.dao.RobotTaskDAO;
 import com.roboworld.enums.TaskType;
 import com.roboworld.model.Robot;
 import com.roboworld.model.RobotTask;
@@ -27,7 +28,10 @@ public class AppTest {
      */
     @Test
     public void createRobotTest() {
-        RoboWorld roboWorld = new RoboWorld();
+
+        RobotTaskDAO robotTaskDAO = new RobotTaskDAO();
+        RoboWorld roboWorld = new RoboWorld(robotTaskDAO);
+        RobotTask robotTask = new RobotTask(1, TaskType.UPGRADE, 1);
 
         Robot robot = new Robot();
         robot.setId(1);
@@ -35,7 +39,6 @@ public class AppTest {
         Robot robot2 = new Robot();
         robot2.setId(2);
 
-        RobotTask robotTask = new RobotTask(1, TaskType.UPGRADE, 1);
         roboWorld.addTaskToAll(robotTask);
 
         Assert.assertEquals(robot.getRobotTask(), robot2.getRobotTask());
